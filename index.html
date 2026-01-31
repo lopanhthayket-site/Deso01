@@ -75,10 +75,23 @@ th,td{
   vertical-align:top;
 }
 
-.highlight{
-  background: yellow;
-  display:inline;
-  line-height: inherit;
+
+.highlight {
+  background-color: #ffeb3b !important; /* Màu vàng sáng */
+  color: inherit !important;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: inherit; /* Giữ nguyên chiều cao dòng */
+}
+/* Ngăn việc bôi đen mặc định của trình duyệt đè lên màu highlight khi click */
+::selection {
+  background: rgba(255, 235, 59, 0.4);
+}
+.highlight:hover {
+  background-color: #fdd835;
 }
 
 .locked input,
@@ -606,40 +619,57 @@ exportPdfBtn.onclick = () => {
   doc.save("BaiLam_HocSinh.pdf");
 };
 
-// ================= HIGHLIGHT TOGGLE =================
-// ================= SAFE HIGHLIGHT (NO LAYOUT SHIFT) =================
-document.addEventListener("mouseup", () => {
-  const sel = window.getSelection();
-  if (!sel || sel.rangeCount === 0) return;
+// ================= MULTI-LINE SAFE HIGHLIGHT =================
 
-  const range = sel.getRangeAt(0);
-  if (range.collapsed) return;
-
-  let startNode = range.startContainer;
-  if (startNode.nodeType !== 3) return; // chỉ xử lý TEXT
-
-  const parent = startNode.parentElement;
-
-  // Nếu đã highlight → bỏ highlight
-  if (parent && parent.classList.contains("highlight")) {
-    parent.replaceWith(document.createTextNode(parent.textContent));
-    sel.removeAllRanges();
-    return;
+// 1. Click để xóa highlight
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("highlight")) {
+    const span = e.target;
+    const parent = span.parentNode;
+    while (span.firstChild) {
+      parent.insertBefore(span.firstChild, span);
+    }
+    parent.removeChild(span);
+    parent.normalize(); // Gộp các node văn bản lại cho sạch
   }
-
-  const text = range.toString();
-  if (!text.trim()) return;
-
-  const span = document.createElement("span");
-  span.className = "highlight";
-  span.textContent = text;
-
-  range.deleteContents();
-  range.insertNode(span);
-
-  sel.removeAllRanges();
 });
 
+// 2. Mouseup để tô màu (Hỗ trợ nhiều dòng)
+document.addEventListener("mouseup", () => {
+  const selection = window.getSelection();
+  if (selection.isCollapsed || selection.rangeCount === 0) return;
+
+  const range = selection.getRangeAt(0);
+  
+  // Tạo một DocumentFragment chứa nội dung được chọn để xử lý
+  const fragment = range.extractContents();
+  
+  // Hàm đệ quy để bao bọc các text node, bỏ qua các thẻ xuống dòng
+  function wrapTextNodes(node) {
+    if (node.nodeType === 3) { // Nếu là Text Node
+      if (node.textContent.trim().length > 0) {
+        const span = document.createElement("span");
+        span.className = "highlight";
+        const newTextNode = document.createTextNode(node.textContent);
+        span.appendChild(newTextNode);
+        return span;
+      }
+    } else {
+      // Nếu là element (như <br>, <b>...), duyệt con của nó
+      const childNodes = Array.from(node.childNodes);
+      childNodes.forEach(child => {
+        const wrapped = wrapTextNodes(child);
+        if (wrapped) node.replaceChild(wrapped, child);
+      });
+    }
+    return node;
+  }
+
+  const newFragment = wrapTextNodes(fragment);
+  range.insertNode(newFragment);
+  
+  selection.removeAllRanges(); // Bỏ bôi đen xanh của hệ thống
+});
 
 </script>
 
