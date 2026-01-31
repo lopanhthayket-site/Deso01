@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>THI THỬ VÀO 10 – TIẾNG ANH</title>
+
+<style>
+body{
+  font-family:"Times New Roman", serif;
+  font-size:19px;
+  background:#2D3C59;
+  margin:0;
+  padding-top:90px;
+}
+
+#examHeader{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:#fff;
+  padding:10px;
+  border-bottom:2px solid #ccc;
+  z-index:999;
+}
+
+.headerRow{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  align-items:center;
+}
+
+#timer{font-weight:bold}
+.timeWarning{color:red}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  margin-top:120px;
+}
+
+.part{margin-bottom:30px}
+.question{margin-bottom:15px}
+
+.short-answer{
+  width:120px;
+  font-size:18px;
+}
+
+textarea{
+  width:100%;
+  height:70px;
+  font-size:18px;
+}
+
+.passageBox{
+  border:1px solid #999;
+  padding:10px;
+  background:#fafafa;
+  margin-bottom:10px;
+  white-space: normal;
+  text-align: justify;
+}
+
+table{
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+th,td{
+  border:1px solid #000;
+  padding:8px;
+  vertical-align:top;
+}
+
+.highlight{
+  background: yellow;
+  display:inline;
+  line-height: inherit;
+}
+
+.locked input,
+.locked textarea{
+  pointer-events:none;
+  opacity:0.6;
+}
+
+#resultBox{
+  display:none;
+  border-top:2px solid #000;
+  margin-top:25px;
+  padding-top:15px;
+}
+
+button{
+  font-size:18px;
+  padding:8px 16px;
+  margin-top:15px;
+  margin-right:10px;
+}
+
+/* CHỮ HỌC SINH GÕ */
+input[type="text"],
+textarea{
+  color: red;
+  font-weight: 400;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="examHeader">
+  <div class="headerRow">
+    <h2>LỚP ANH THẦY KẾT – THI THỬ VÀO 10</h2>
+    <div id="timer">Time: 60:00</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ================= PART 1 ================= -->
+<div class="part">
+<h3>A. PART 1: USE OF ENGLISH (4,5ms)</h3>
+
+<h4>I. MULTIPLE CHOICE QUESTIONS (2,5ms)</h4>
+
+<div class="question">
+1. If it ______ sunny next Sunday, we will go on a picnic in Son Tra Peninsula.<br>
+<label><input type="radio" name="mc1" value="A"> A. is</label><br>
+<label><input type="radio" name="mc1" value="B"> B. be</label><br>
+<label><input type="radio" name="mc1" value="C"> C. was</label><br>
+<label><input type="radio" name="mc1" value="D"> D. will be</label>
+</div>
+
+<div class="question">
+2. The children are very fond ______ reading comic books in their free time.<br>
+<label><input type="radio" name="mc2" value="A"> A. at</label><br>
+<label><input type="radio" name="mc2" value="B"> B. of</label><br>
+<label><input type="radio" name="mc2" value="C"> C. with</label><br>
+<label><input type="radio" name="mc2" value="D"> D. for</label>
+</div>
+
+<div class="question">
+3. My younger sister has been practicing ______ violin for two hours in her room.<br>
+<label><input type="radio" name="mc3" value="A"> A. a</label><br>
+<label><input type="radio" name="mc3" value="B"> B. an</label><br>
+<label><input type="radio" name="mc3" value="C"> C. the</label><br>
+<label><input type="radio" name="mc3" value="D"> D. Ø</label>
+</div>
+
+<div class="question">
+4. The teacher explained the lesson clearly, but I didn't know ______ to solve the math problem.<br>
+<label><input type="radio" name="mc4" value="A"> A. who</label><br>
+<label><input type="radio" name="mc4" value="B"> B. where</label><br>
+<label><input type="radio" name="mc4" value="C"> C. what</label><br>
+<label><input type="radio" name="mc4" value="D"> D. how</label>
+</div>
+
+<div class="question">
+5. You should ______ the lights before leaving the room to save energy.<br>
+<label><input type="radio" name="mc5" value="A"> A. turn off</label><br>
+<label><input type="radio" name="mc5" value="B"> B. look after</label><br>
+<label><input type="radio" name="mc5" value="C"> C. get over</label><br>
+<label><input type="radio" name="mc5" value="D"> D. take off</label>
+</div>
+
+<div class="question">
+6. The movie was ______ boring that many people left the cinema before it ended.<br>
+<label><input type="radio" name="mc6" value="A"> A. such</label><br>
+<label><input type="radio" name="mc6" value="B"> B. very</label><br>
+<label><input type="radio" name="mc6" value="C"> C. so</label><br>
+<label><input type="radio" name="mc6" value="D"> D. too</label>
+</div>
+
+<div class="question">
+7. This new environmental project aims to ______ awareness about climate change.<br>
+<label><input type="radio" name="mc7" value="A"> A. rise</label><br>
+<label><input type="radio" name="mc7" value="B"> B. raise</label><br>
+<label><input type="radio" name="mc7" value="C"> C. lift</label><br>
+<label><input type="radio" name="mc7" value="D"> D. grow</label>
+</div>
+
+<div class="question">
+8. I was ______ when I heard that I had passed the entrance exam to Le Quy Don High School.<br>
+<label><input type="radio" name="mc8" value="A"> A. disappointed</label><br>
+<label><input type="radio" name="mc8" value="B"> B. worried</label><br>
+<label><input type="radio" name="mc8" value="C"> C. relieved</label><br>
+<label><input type="radio" name="mc8" value="D"> D. upset</label>
+</div>
+
+<div class="question">
+9. Hoi An Ancient Town is famous for its unique ______ and beautiful lanterns.<br>
+<label><input type="radio" name="mc9" value="A"> A. architecture</label><br>
+<label><input type="radio" name="mc9" value="B"> B. technology</label><br>
+<label><input type="radio" name="mc9" value="C"> C. climate</label><br>
+<label><input type="radio" name="mc9" value="D"> D. population</label>
+</div>
+
+<div class="question">
+10. You need to speak ______ so that the audience can understand your presentation.<br>
+<label><input type="radio" name="mc10" value="A"> A. quick</label><br>
+<label><input type="radio" name="mc10" value="B"> B. slow</label><br>
+<label><input type="radio" name="mc10" value="C"> C. clearly</label><br>
+<label><input type="radio" name="mc10" value="D"> D. bad</label>
+</div>
+
+
+
+
+<h4>II. WORD FORM (1.0m)</h4>
+<div class="question">
+1. The local authorities are looking for a ______ to the problem of air pollution. 
+<input class="short-answer" type="text" name="wf1"> <b>(solve)</b>
+</div>
+
+<div class="question">
+2. Many people are ______ that global warming is getting worse every year. 
+<input class="short-answer" type="text" name="wf2"> <b>(hope)</b>
+</div>
+
+<div class="question">
+3. To protect the environment, we should use natural resources ______. 
+<input class="short-answer" type="text" name="wf3"> <b>(care)</b>
+</div>
+
+<div class="question">
+4. Last week, the teacher encouraged the students to ______ more plastic bottles for recycling. 
+<input class="short-answer" type="text" name="wf4"> <b>(collection)</b>
+</div>
+
+
+
+
+<h4>III. VERB FORM & TENSE (1.0m)</h4>
+<div class="question">
+1. I <input class="short-answer" type="text" name="v2"> my old teacher since I graduated from secondary school. <b>(not/meet)</b>
+</div>
+
+<div class="question">
+2. Listen! The bird <input class="short-answer" type="text" name="v1"> a beautiful song on the tree. <b>(sing)</b>
+</div>
+
+<div class="question">
+3. It’s worth <input class="short-answer" type="text" name="v3"> to the local museum to learn more about our history. <b>(go)</b>
+</div>
+
+<div class="question">
+4. My parents didn't let me <input class="short-answer" type="text" name="v4"> to the concert with my friends. <b>(go)</b>
+</div>
+
+
+
+<!-- ================= PART 2 ================= -->
+<div class="part">
+<h3>B. PART 2: READING (3ms)</h3>
+
+<h4>I. MATCHING (1m)</h4>
+
+<table width="100%">
+<tr><th>Notice</th><th>Statement</th></tr>
+<tr>
+    <td>1. Electronic devices are only for school projects.</td>
+    <td>A. This rule is to ensure your safety during the trip.</td>
+</tr>
+<tr>
+    <td>2. Sort your waste before throwing it away.</td>
+    <td>B. You are not allowed to use these for playing games.</td>
+</tr>
+<tr>
+    <td>3. Under repair. No entry today.</td>
+    <td>C. You should put rubbish in the correct bins for recycling.</td>
+</tr>
+<tr>
+    <td>4. Do not touch the museum exhibits.</td>
+    <td>D. This area is closed to the public while it is being fixed.</td>
+</tr>
+<tr>
+    <td>5. Fasten your seatbelt while the bus is moving.</td>
+    <td>E. You must not touch the historical objects in this place.</td>
+</tr>
+</table>
+
+<p>
+<b>Your answers:</b><br>
+1. <b>B</b>  &nbsp;
+2. <input class="short-answer">
+3. <input class="short-answer">
+4. <input class="short-answer">
+5. <input class="short-answer">
+</p>
+
+
+
+<h4>II. MULTIPLE CHOICE GAP FILL (1m)</h4>
+
+<div class="passageBox">
+Modern teenagers are growing up in a world full of technology. Smartphones,
+tablets and computers have become an important part of their daily lives.
+Thanks to these devices, students can (1) ______ information quickly and
+stay connected with friends easily.
+
+However, spending too much time on screens can cause several problems.
+Teenagers may feel tired or lose concentration (2) ______ they use their
+phones for long periods without taking breaks. As a result, their academic
+performance and health may be affected.
+
+Although many teenagers are aware of these negative effects, only (3) ______
+of them are willing to change their habits. Parents and teachers should work
+together to guide young people to use technology (4) ______ a more responsible way,
+especially studying or doing homework.
+</div>
+
+<p><b>(1)</b></p>
+<label><input type="radio" name="gap1" value="A"> A. search</label><br>
+<label><input type="radio" name="gap1" value="B"> B. access</label><br>
+<label><input type="radio" name="gap1" value="C"> C. provide</label><br>
+<label><input type="radio" name="gap1" value="D"> D. achieve</label>
+
+<br>
+
+<p><b>(2)</b></p>
+<label><input type="radio" name="gap2" value="A"> A. because</label><br>
+<label><input type="radio" name="gap2" value="B"> B. although</label><br>
+<label><input type="radio" name="gap2" value="C"> C. but</label><br>
+<label><input type="radio" name="gap2" value="D"> D. so</label>
+
+<br>
+
+<p><b>(3)</b></p>
+<label><input type="radio" name="gap3" value="A"> A. many</label><br>
+<label><input type="radio" name="gap3" value="B"> B. much</label><br>
+<label><input type="radio" name="gap3" value="C"> C. a few</label><br>
+<label><input type="radio" name="gap3" value="D"> D. a little</label>
+
+<br>
+
+<p><b>(4)</b></p>
+<label><input type="radio" name="gap4" value="A"> A. in</label><br>
+<label><input type="radio" name="gap4" value="B"> B. on</label><br>
+<label><input type="radio" name="gap4" value="C"> C. at</label><br>
+<label><input type="radio" name="gap4" value="D"> D. for</label>
+
+
+
+<h4>III. MULTIPLE CHOICE COMPREHENSION (1m)</h4>
+
+<div class="passageBox">
+  <b>My Life in the City</b><br><br>
+  Pop singer Charlotte Bond shares her experience of growing up and living
+  in London. She lives right in the city centre and enjoys the lively
+  atmosphere, as there are always activities and people around at any time
+  of the day. The area is also popular with well-known figures, who often
+  visit for its wide range of restaurants and shopping areas.
+
+  Charlotte has spent her whole life in London. When she was younger, she
+  attended singing lessons at a location close to where she lives now.
+  Although she was nervous at the beginning and found some songs challenging,
+  her teacher was highly skilled and helped her develop abilities that later
+  supported her musical career.
+
+  Nowadays, when friends come to visit, Charlotte likes taking them around
+  the city. While buses and taxis are available, walking is usually their
+  preferred choice because traffic congestion is heavy and parking places
+  are difficult to find.
+
+  One of Charlotte’s favourite buildings is the Natural History Museum.
+  She once performed there with her band at a special event, which left
+  her with unforgettable memories. Whenever she visits the museum with
+  friends, she enjoys telling them about that remarkable night.
+</div>
+
+1. What does Charlotte enjoy most about living in the city centre?<br>
+<label><input type="radio" name="rc1" value="A"> A. The energetic atmosphere</label><br>
+<label><input type="radio" name="rc1" value="B"> B. The number of famous visitors</label><br>
+<label><input type="radio" name="rc1" value="C"> C. The low cost of living</label><br>
+<label><input type="radio" name="rc1" value="D"> D. The peaceful environment</label><br><br>
+
+2. What can be inferred about Charlotte’s singing lessons when she was young?<br>
+<label><input type="radio" name="rc2" value="A"> A. They were easy from the start</label><br>
+<label><input type="radio" name="rc2" value="B"> B. Her teacher lacked experience</label><br>
+<label><input type="radio" name="rc2" value="C"> C. They played an important role in her career</label><br>
+<label><input type="radio" name="rc2" value="D"> D. They took place far from her home</label><br><br>
+
+3. Why does Charlotte prefer walking around the city with her friends?<br>
+<label><input type="radio" name="rc3" value="A"> A. It is cheaper than public transport</label><br>
+<label><input type="radio" name="rc3" value="B"> B. Traffic and parking cause inconvenience</label><br>
+<label><input type="radio" name="rc3" value="C"> C. Public transport is unavailable</label><br>
+<label><input type="radio" name="rc3" value="D"> D. She does not like driving anymore</label><br><br>
+
+4. Which of the following statements is TRUE according to the passage?<br>
+<label><input type="radio" name="rc4" value="A"> A. Charlotte only recently moved to London</label><br>
+<label><input type="radio" name="rc4" value="B"> B. She has never performed at the museum</label><br>
+<label><input type="radio" name="rc4" value="C"> C. Her experience at the museum was memorable</label><br>
+<label><input type="radio" name="rc4" value="D"> D. She avoids visiting the museum with friends</label>
+
+
+
+<!-- ================= PART 3 ================= -->
+<div class="part">
+<div class="part">
+  <h3>C. PART 3: COMMUNICATION SKILLS (0,5m)</h3>
+
+  <p><b>1. Choose the best response to complete the exchange.</b></p>
+  Nam: "Congratulation! You've chosen to be the leader of our English club."<br>
+  Lan: "______"<br>
+  <label><input type="radio" name="com1" value="A"> A. You're welcome.</label><br>
+  <label><input type="radio" name="com1" value="B"> B. It's my pleasure.</label><br>
+  <label><input type="radio" name="com1" value="C"> C. That's very kind of you to say so.</label><br>
+  <label><input type="radio" name="com1" value="D"> D. Yes, I'd love to.</label><br><br>
+
+  <p><b>2. Choose the best arrangement of the sentences to make a meaningful exchange.</b></p>
+
+  a. Tom: Great! Shall we meet at the park gate at 5 PM?<br>
+  b. Jerry: I'm a bit bored. Why don't we go for a walk?<br>
+  c. Jerry: See you then!<br>
+  d. Tom: That sounds like a good idea.<br>
+  e. Jerry: Yes, 5 PM is perfect for me.<br><br>
+
+  <label><input type="radio" name="com2" value="A"> A. b – d – a – e – c</label><br>
+  <label><input type="radio" name="com2" value="B"> B. b – a – d – e – c</label><br>
+  <label><input type="radio" name="com2" value="C"> C. a – b – d – e – c</label><br>
+  <label><input type="radio" name="com2" value="D"> D. d – b – a – e – c</label>
+</div>
+
+
+<!-- ================= PART 4 ================= -->
+<div class="part">
+<h3>D. PART 4: WRITING (2ms)</h3>
+
+  <p><b>1. Complete each of the following sentences so that it is closest in meaning to the original one. (1m)</b></p>
+
+  <p>1. "I will visit my grandparents tomorrow," said Nam.<br>
+  → Nam said that ............................................................ the following day.
+  </p>
+  <textarea name="wr1" placeholder="Nhập câu trả lời của bạn vào đây..."></textarea>
+
+  <p>2. No city in Vietnam is larger than Ho Chi Minh City.<br>
+  → Ho Chi Minh City is the ............................................................ in Vietnam.
+  </p>
+  <textarea name="wr2" placeholder="Nhập câu trả lời của bạn vào đây..."></textarea>
+
+  <p><b>2. Combine the two sentences into one, using the word given in brackets. (1m)</b></p>
+
+  <p>1. The weather was very bad. They decided to go camping in the forest. <b>(in spite of)</b><br>
+  → ......................................................................., they decided to go camping in the forest.
+  </p>
+  <textarea name="wr3" placeholder="Nhập câu trả lời của bạn vào đây..."></textarea>
+
+  <p>2. The dress is very expensive. My mother bought it for my birthday last week. <b>(which)</b><br>
+  → The dress ....................................................................... very expensive.
+  </p>
+  <textarea name="wr4" placeholder="Nhập câu trả lời của bạn vào đây..."></textarea>
+</div>
+
+<button id="submitBtn">Submit</button>
+<button id="exportPdfBtn">Xuất PDF</button>
+
+<div id="resultBox">
+  <h3 id="score"></h3>
+  <pre id="answerReveal"></pre>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+// TIMER - Đã sửa thành 60 phút
+let time = 60 * 60; // 60 phút * 60 giây
+const timerDisplay = document.getElementById("timer");
+
+const countdown = setInterval(() => {
+  let m = Math.floor(time / 60);
+  let s = time % 60;
+
+  // Hiển thị định dạng 00:00
+  timerDisplay.innerText = `Time: ${m < 10 ? "0" + m : m}:${s < 10 ? "0" + s : s}`;
+
+  if (time <= 0) {
+    clearInterval(countdown);
+    timerDisplay.innerText = "Time: 00:00";
+    timerDisplay.classList.add("timeWarning");
+    // Tùy chọn: Tự động khóa bài khi hết giờ
+    // submitBtn.click(); 
+  }
+
+  if (time <= 300) { // Còn 5 phút thì hiện chữ đỏ
+    timerDisplay.classList.add("timeWarning");
+  }
+
+  time--;
+}, 1000);
+// ANSWER KEY
+const key={mc1:"B",gap1:"B",rc1:"A",com1:"B"};
+
+// SUBMIT
+submitBtn.onclick=()=>{
+  let correct=0,total=Object.keys(key).length;
+  let reveal="";
+  for(let q in key){
+    let c=document.querySelector(`input[name="${q}"]:checked`);
+    if(c && c.value===key[q]) correct++;
+    reveal+=`${q}: ${key[q]}\n`;
+  }
+  let scoreVal=(correct/total*8).toFixed(2);
+  resultBox.style.display="block";
+  score.innerText=`Trắc nghiệm: ${correct}/${total} → ${scoreVal}/8.0`;
+  answerReveal.innerText=reveal;
+  document.body.classList.add("locked");
+};
+
+// EXPORT PDF
+// EXPORT PDF – XUẤT BÀI LÀM HỌC SINH TOÀN BỘ CÁC CÂU
+exportPdfBtn.onclick = () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF("p", "pt", "a4");
+
+  let y = 40;
+  const lh = 18;
+
+  function add(text, isHeader = false) {
+    if (isHeader) doc.setFont("times", "bold");
+    else doc.setFont("times", "normal");
+
+    const lines = doc.splitTextToSize(text, 520);
+    doc.text(lines, 40, y);
+    y += lines.length * lh;
+
+    if (y > 760) {
+      doc.addPage();
+      y = 40;
+    }
+  }
+
+  add("TEST RESULTS", true);
+  add("--------------------------------------------------\n");
+
+  // ===== PART 1 =====
+  add("A. PART 1: USE OF ENGLISH", true);
+  
+  add("I. MULTIPLE CHOICE");
+  for (let i = 1; i <= 10; i++) {
+    const q = "mc" + i;
+    const a = document.querySelector(`input[name="${q}"]:checked`);
+    add(`${i}. ${a ? a.value : "___"}`);
+  }
+
+  add("\nII. WORD FORM");
+  // Lấy các input có name bắt đầu bằng 'wf'
+  for (let i = 1; i <= 4; i++) {
+    const el = document.querySelector(`input[name="wf${i}"]`);
+    add(`${i}. ${el ? el.value : "___"}`);
+  }
+
+  add("\nIII. VERB FORM & TENSE");
+  // Lấy các input có name bắt đầu bằng 'v'
+  for (let i = 1; i <= 4; i++) {
+    const el = document.querySelector(`input[name="v${i}"]`);
+    add(`${i}. ${el ? el.value : "___"}`);
+  }
+
+  // ===== PART 2 =====
+  add("\nB. PART 2: READING", true);
+
+  add("I. MATCHING");
+  const matchingInputs = document.querySelectorAll("table + p input");
+  matchingInputs.forEach((el, i) => {
+    // Câu 1 đã có sẵn B, các câu sau từ 2-5
+    add(`${i + 2}. ${el.value || "___"}`);
+  });
+
+  add("\nII. GAP FILL");
+  for (let i = 1; i <= 4; i++) {
+    const gap = document.querySelector(`input[name="gap${i}"]:checked`);
+    add(`(${i}). ${gap ? gap.value : "___"}`);
+  }
+
+  add("\nIII. READING COMPREHENSION");
+  for (let i = 1; i <= 4; i++) {
+    const rc = document.querySelector(`input[name="rc${i}"]:checked`);
+    add(`${i}. ${rc ? rc.value : "___"}`);
+  }
+
+  // ===== PART 3 =====
+  add("\nC. PART 3: COMMUNICATION SKILLS", true);
+  for (let i = 1; i <= 2; i++) {
+    const com = document.querySelector(`input[name="com${i}"]:checked`);
+    add(`${i}. ${com ? com.value : "___"}`);
+  }
+
+  // ===== PART 4 =====
+  add("\nD. PART 4: WRITING", true);
+  const textareas = document.querySelectorAll("textarea");
+  textareas.forEach((ta, i) => {
+    let prefix = "";
+    if (i < 2) prefix = `Section 1 - Q${i+1}: `;
+    else prefix = `Section 2 - Q${i-1}: `;
+    add(`${prefix}${ta.value || "___"}`);
+  });
+
+  doc.save("BaiLam_HocSinh.pdf");
+};
+
+// ================= HIGHLIGHT TOGGLE =================
+// ================= SAFE HIGHLIGHT (NO LAYOUT SHIFT) =================
+document.addEventListener("mouseup", () => {
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0) return;
+
+  const range = sel.getRangeAt(0);
+  if (range.collapsed) return;
+
+  let startNode = range.startContainer;
+  if (startNode.nodeType !== 3) return; // chỉ xử lý TEXT
+
+  const parent = startNode.parentElement;
+
+  // Nếu đã highlight → bỏ highlight
+  if (parent && parent.classList.contains("highlight")) {
+    parent.replaceWith(document.createTextNode(parent.textContent));
+    sel.removeAllRanges();
+    return;
+  }
+
+  const text = range.toString();
+  if (!text.trim()) return;
+
+  const span = document.createElement("span");
+  span.className = "highlight";
+  span.textContent = text;
+
+  range.deleteContents();
+  range.insertNode(span);
+
+  sel.removeAllRanges();
+});
+
+
+</script>
+
+</body>
+</html>
